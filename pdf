@@ -1,0 +1,18 @@
+<script>
+        function validate(file) {
+        var ext = file.split(".");
+        ext = ext[ext.length-1].toLowerCase();
+        var arrayExtensions = ["pdf"];
+
+        if (arrayExtensions.lastIndexOf(ext) == -1) {
+            alert("Tipo di file non ammesso. Caricare un pdf");
+            //elimina il file errato caricato
+            $("#allegato").val("");
+        }
+    }
+  </script>
+  
+  //html
+  <p><input type="file" name="allegato" id="allegato" onChange="validate(this.value)"></p>
+  
+  
