@@ -1,0 +1,43 @@
+   <script>
+        $(document).ready(function(){
+            $("#codicearea").change(function(){
+                $("#codicelab").load("cascade_dd.php?area=" + $("#codicearea").val()); //chiama il file che fa una query e restituisce il risultato
+            });
+        });
+    </script>
+    
+    <div class='form-group row'>
+
+          <label for='codice_area' class="col-sm-3 col-form-label">Scegliere l'area</label>
+          <div class='col-6'>
+          <select name='codice_area' class="form-control" id='codicearea' required>
+              <option value=''></option>
+            <? while($d1=mysqli_fetch_array($r1))
+              {
+                echo ("<option value='$d1[0]'>".$d1[0]." - ".$d1[1]."</option>");
+              }
+            ?>
+          </select>
+        </div>
+      </div>
+      <div class='form-group row'>
+
+          <label for='codice_lab' class="col-sm-3 col-form-label">Scegliere il codice del laboratorio</label>
+          <div class='col-6'>
+          <select name='codice_lab' class="form-control" id='codicelab' required>
+
+              <!-- popolo la tendina dei laboratori dinamicamente-->
+
+          </select>
+        </div>
+      </div>
+      
+      <-- file chiamato-->
+      
+$area = $_GET['area'];
+$q0 = "SELECT id_laboratorio, descrizione FROM at_lab WHERE id_area='$area' ORDER BY id_laboratorio";
+$r0 = mysqli_query($bd, $q0);
+
+while($d0 = mysqli_fetch_array($r0)) {
+   		echo "<option value='$d0[0]'>" . $d0[0] ." - ".$d0[1]. "</option>";
+	}
