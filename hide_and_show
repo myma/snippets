@@ -1,0 +1,73 @@
+<script>
+$(document).ready(function(){
+		$('#qualifica').on('change', function() { //cambiando il valore di qualifica con uno dei tre sotto, si cambia la visualizzazione
+			if(this.value == 'Doc. Prim.')
+			{
+				$("#prim").show();
+				$("#sec1").hide();
+				$("#sec2").hide();
+			}
+			else if (this.value == 'Doc. Sec. I')
+			{
+				$("#sec1").show();
+				$("#prim").hide();
+				$("#sec2").hide();
+			}
+			else if (this.value == 'Doc. Sec. II')
+			{
+				$("#sec2").show();
+				$("#prim").hide();
+				$("#sec1").hide();
+			}
+			else {
+				$("#prim").hide();
+				$("#sec1").hide();
+				$("#sec2").hide();
+			}
+		});
+});
+</script>
+
+
+
+<div style='display:none;' id='prim'>
+						 <strong><label for="tipologia_prim">Tipologia posto: </label></strong>
+						 <select name='tipologia_prim' id='tipologia_prim' class="form-control">
+						 <option value='' placeholder='Selezionare una delle tipologie'> </option>
+						 <option value='COM'>Comune</option>
+						 <option value='SOS'>Sostegno</option>
+						 <option value='IRC'>Insegnamento Religione Cattolica</option>
+					 </select>
+					 </div>
+					 <div style='display:none;' id='sec1'>
+						 <strong><label for="classe_concorso1">Classe di concorso (scuola secondaria di I grado): </label></strong>
+						 <select name='classe_concorso1' id='classe_concorso1' class='form-control'>
+						 <option value='' placeholder='Selezionare una delle classi'> </option>
+						 <option value='IRC'>Insegnamento Religione Cattolica</option>
+						 <?php
+							 while ($classi1=mysqli_fetch_array($resclassi1))
+							 {
+								$codice1=$classi1['codice'];
+								$denominazione1=$classi1['denominazione'];
+								$desc_estesa1 = $codice1. " - ".$denominazione1;
+								echo("<option value=".$codice1.">$desc_estesa1</option>");
+							}
+							?>
+					 </select>
+					 </div>
+					 <div style='display:none;' id='sec2'>
+						 <strong><label for="classe_concorso2">Classe di concorso (scuola secondaria di II grado): </label></strong>
+						 <select name='classe_concorso2' id='classe_concorso2'>
+						 <option value='' placeholder='Selezionare una delle classi'> </option>
+						 <option value='IRC'>Insegnamento Religione Cattolica</option>
+						 <?php
+							 while ($classi2=mysqli_fetch_array($resclassi2))
+							 {
+								$codice2=$classi2['codice'];
+								$denominazione2=$classi2['denominazione'];
+								$desc_estesa2 = $codice2. " - ".$denominazione2;
+								echo("<option value=".$codice2.">$desc_estesa2</option>");
+							}
+							?>
+					 </select>
+					 </div>
