@@ -1,0 +1,7 @@
+__FILE__ //The full path and filename of the file with symlinks resolved
+
+__DIR__ //The directory of the file.
+
+basename(__FILE__) //trova il file dato il path
+
+dirname(__FILE__) //trova la directory dato il path
