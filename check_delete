@@ -2,11 +2,12 @@
 
 function checkDelete() {
 var question =confirm("Vuoi davvero cancellare?\nL'operazione è irreversibile.");
-if(question==true)
-{
-  return true;
-}
-else
-{
-  return false;
+  if(question==true)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
 }
