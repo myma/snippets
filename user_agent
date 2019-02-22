@@ -1,0 +1,9 @@
+if (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident') !== FALSE) {
+    $useragent="<div class='container'>
+    <div class='card text-white bg-danger mb-3'>
+      <div class='card-header'>NOTA BENE</div>
+      <div class='card-body'>
+        <p class='card-text'>Il browser attualmente utilizzato da $login_session &egrave MS Internet Explorer.<br><strong>Si raccomanda di passare ad altro browser (Google Chrome o Mozilla Firefox nella versione pi&ugrave; recente) per il corretto funzionamento della piattaforma.</strong></p>
+    </div>
+    </div>
+    </div>";
