@@ -1,0 +1,20 @@
+<script>
+
+      function mandatory(ref){
+
+        switch (ref) {
+          case 1:
+                      if(document.getElementById("some_id").value == '1')
+                        {
+
+                          document.getElementById("some_other_id").removeAttribute("required");
+                        }
+                        break;
+          
+          default:      break;
+
+        }
+
+      }
+
+    </script>
