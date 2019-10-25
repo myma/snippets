@@ -1,0 +1,19 @@
+$(document).ready(function(){
+
+                  $("#codicefiscale").keyup(function(){
+                    var codicefiscale = this.id;
+                      $.ajax({ type: "POST",
+                      url: "check_cf.php",
+                      data: codicefiscale+"="+this.value,
+                      success: function(response){
+
+                        if(response== '1')
+                        {
+                          $("#codicefiscale").val("Codice già presente");
+
+                        }
+                      }
+                      });
+                    });
+                 });
+                    
