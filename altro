@@ -1,0 +1,16 @@
+<script type="text/javascript">
+function showfield(name){
+	if(name=='Other')document.getElementById('div1').innerHTML = 'Other: <input type="text" name="other" />';
+	else 
+		document.getElementById('div1').innerHTML='';
+}
+</script>
+<select name="select_opt" id="select_opt" class="form-control" onchange="showfield(this.options[this.selectedIndex].value)" required> 
+	<option value="">Please Select Source</option>  
+	<option value="Search Engine">Search Engine</option>
+	<option value="Social Media">Social Media</option>
+	<option value="E-Mail Campaigns">E-Mail Campaigns</option>
+	<option value="Exhibitions">Exhibitions</option>
+	<option value="Other">Other Sources, Please Specify</option>
+</select>
+<div id="div1"></div>
