@@ -1,0 +1,16 @@
+onchange="setReq()"
+
+<script>
+      function setReq()
+      {
+        var x = document.getElementById("item1").value;
+        if(x=='n')
+        {
+          document.getElementById("item2").removeAttribute("required");
+        }
+        else {
+          document.getElementById("item2").setAttribute("required","required");
+        }
+
+      }
+    </script>
