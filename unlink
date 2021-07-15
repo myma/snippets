@@ -1,0 +1,8 @@
+$query="SELECT file_link FROM table WHERE ....";
+			 $result=mysqli_query(.....);
+        $data=....
+			 $file=substr($data[0], 41, 300);
+			 if($file !='')
+			 {
+				 unlink($_SERVER['DOCUMENT_ROOT'].$file);
+			 }
