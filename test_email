@@ -1,0 +1,32 @@
+<form method="post" name="modulo" onsubmit="return testem(this)">
+Username scelto:<br />
+<input type="text" name="username" size="30"/><br />
+Digita qui l'indirizzo email:<br />
+<input type="email" name="email" size="100"/><br />
+Conferma l'indirizzo email:<br />
+<input type="email" name="email_2" size="100"/><br />
+<input type="submit" value="Invia" />
+</form>
+
+<script>
+<!-- 
+function testem(modulo){
+  // Verifico che il campo email sia valorizzato in caso contrario
+  // avverto dell'errore tramite un Alert
+  if (modulo.email.value == ""){
+    alert("Errore: inserire indirizzo email")
+    modulo.email.focus()
+    return false
+  }
+  // Verifico che i due indirizzi email siano uguali, in caso contrario avverto
+  // dell'errore con un Alert
+  if (modulo.email.value != modulo.email_2.value) {
+    alert("Gli indirizzi email inseriti non sono uguali")
+    modulo.password.focus()
+    modulo.password.select()
+    return false
+  }
+  return true
+}
+-->
+</script>
