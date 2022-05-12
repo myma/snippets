@@ -1,0 +1,2 @@
+$(email).on('paste', false);
+<input type="text" name="email1" autocomplete="off"/>  

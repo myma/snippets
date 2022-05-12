@@ -1,1 +1,0 @@
-$(email).on('paste', false);
