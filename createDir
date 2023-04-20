@@ -1,0 +1,4 @@
+if(!is_dir("sec1/".$anno))
+{
+  mkdir("sec1/".$anno, 0770, true);
+}
