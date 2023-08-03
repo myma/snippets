@@ -1,0 +1,6 @@
+$q0="SELECT username, password, rubrica FROM personale WHERE username= :username and attivo=1 and rubrica >0";
+$p0=array(':username' => $myusername);
+$r0=$pdo->prepare($q0);
+$r0->execute($p0);
+$n0=$r0->rowCount();
+$d0=$r0->fetch();
