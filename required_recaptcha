@@ -1,0 +1,13 @@
+<script>
+    function onSubmit(token) {
+
+        var form = document.getElementById("YOUR_FORM_ID");
+        if (form.checkValidity()) {
+            form.submit();
+        } else {
+            grecaptcha.reset();
+            form.reportValidity();
+        }
+
+    }
+</script>
